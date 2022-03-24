@@ -1,8 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Lab 4</string>
-    <string name="question" >Windhoek is the capital city of Namibia</string>
+    <string name="app_name">Namibia Quiz</string>
+    <string name="question" >Question comes here</string>
     <string name="quiz" >Quiz 1 / 10</string>
     <string name="false_choice">False</string>
     <string name="compute_grade">Compute grade</string>
     <string name="true_choice" >True</string>
+    <string name="share">Share</string>
+    <string name="score">0</string>
+    <string name="tScore">/10</string>
+    <string name="profile_image">Profile image</string>
+    <string name="congrats_message">Congrats message</string>
+    <string name="mainActivityLabel">Results</string>
 </resources>
