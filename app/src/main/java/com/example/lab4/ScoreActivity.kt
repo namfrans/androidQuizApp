@@ -8,38 +8,43 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ScoreActivity: AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.total_score_layout)
+    override fun onCreate( savedInstanceState: Bundle? ) {
 
-        val gradeValue: TextView = findViewById(R.id.scoreView)
-        val complement: TextView = findViewById(R.id.message)
-        val shareButton: Button = findViewById(R.id.shareBtn)
-        val num = intent.getIntExtra(MainActivity.SCORE, 0)
+        super.onCreate( savedInstanceState )
+        setContentView( R.layout.total_score_layout )
 
-        gradeValue.setText(Integer.toString(num))
-        if (num >= 8){
-            complement.setText("Excellent,Frans you did well.")
+        val totalGrade: TextView = findViewById( R.id.scoreView )
+        val complement: TextView = findViewById( R.id.message )
+        val shareButton: Button = findViewById( R.id.shareBtn )
+        val score = intent.getIntExtra( MainActivity.SCORE, 0 )
+
+        totalGrade.text = score.toString()
+
+        if ( score >= 8 ){
+            complement.text = getString( R.string.excellent_complement )
         }
-        if (num in 5..7){
-            complement.setText("Good,Frans you passed.")
+        if ( score in 5..7 ){
+            complement.text = getString( R.string.good_complement )
         }
-        if (num < 5){
-            complement.setText("Poor,Frans you failed.")
+        if ( score < 5 ){
+            complement.text = getString( R.string.satisfactory_complement )
         }
 
         shareButton.setOnClickListener{
+
             val sendIntent = Intent().apply {
+
                 action = Intent.ACTION_SEND
-                putExtra(Intent.EXTRA_TEXT,  "You scored: "+ num+ " /10")
+                putExtra( Intent.EXTRA_TEXT, "You scored: $score  /10" )
                 type = "text/plain"
+
             }
             try {
-                startActivity(sendIntent)
-            }catch (e: ActivityNotFoundException){
-                stopService(sendIntent)
+                startActivity( sendIntent )
+            } catch ( e: ActivityNotFoundException ) {
+                stopService( sendIntent )
             }
-
         }
+
     }
 }

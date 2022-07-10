@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/quiz_que"
+        android:id="@+id/question"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
@@ -34,16 +34,16 @@
         android:layout_marginBottom="156dp"
         android:checked="false"
         android:text="@string/true_choice"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/computeGrade"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/computeGrade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/compute_grade"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
         android:layout_marginBottom="156dp"
         android:checked="false"
         android:text="@string/false_choice"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/computeGrade"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
@@ -73,13 +73,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/nxt"
+        android:id="@+id/next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginBottom="56dp"
-        android:text="Next"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:text="@string/next"
+        app:layout_constraintBottom_toTopOf="@+id/computeGrade"
         app:layout_constraintStart_toStartOf="parent" />
 
 

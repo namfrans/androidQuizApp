@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Namibia Quiz</string>
     <string name="question" >Question comes here</string>
     <string name="quiz" >Quiz 1 / 10</string>
@@ -10,5 +10,9 @@
     <string name="tScore">/10</string>
     <string name="profile_image">Profile image</string>
     <string name="congrats_message">Congrats message</string>
+    <string name="excellent_complement">Excellent, Frans you did well.</string>
+    <string name="good_complement">Good, Frans you passed.</string>
+    <string name="satisfactory_complement">Satisfactory, Frans you failed.</string>
     <string name="mainActivityLabel">Results</string>
+    <string name="next">Next</string>
 </resources>
