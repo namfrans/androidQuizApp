@@ -41,32 +41,31 @@ class MainActivity : AppCompatActivity() {
 
         fun correct() {
             radioButtonTrue.setOnClickListener {
-
                 val toastCorrect = Toast.makeText( this, "Correct", Toast.LENGTH_SHORT )
                 marks++
                 toastCorrect.show()
+                radioButtonFalse.isEnabled = false
             }
 
             radioButtonFalse.setOnClickListener {
-
                 val toastIncorrect = Toast.makeText( this, "Incorrect", Toast.LENGTH_SHORT )
                 toastIncorrect.show()
+                radioButtonTrue.isChecked = false
             }
         }
 
         fun wrong() {
-
             radioButtonTrue.setOnClickListener {
-
                 val toastIncorrect = Toast.makeText( this, "Incorrect", Toast.LENGTH_SHORT )
                 toastIncorrect.show()
+                radioButtonFalse.isEnabled = false
             }
 
             radioButtonFalse.setOnClickListener {
-
                 val toastCorrect = Toast.makeText( this, "Correct", Toast.LENGTH_SHORT )
                 marks++
                 toastCorrect.show()
+                radioButtonTrue.isEnabled = false
             }
         }
 
@@ -79,9 +78,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         nextButton.setOnClickListener {
-
             if ( questionNumber < 9 ) {
-
                 questionNumber += 1
                 progressBar.progress = questionNumber
                 questionSector.text = questions[ questionNumber ]
@@ -99,21 +96,20 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 radioButtonTrue.isChecked = false
+                radioButtonTrue.isEnabled = true
+
                 radioButtonFalse.isChecked = false
-
+                radioButtonFalse.isEnabled = true
             } else {
-
                 val doneMessage = Toast.makeText( this, "You have answered all questions, click 'Compute Grade' to view your score.", Toast.LENGTH_LONG )
                 doneMessage.show()
             }
         }
 
         computeResults.setOnClickListener {
-
             val intent = Intent( this, ScoreActivity::class.java )
             intent.putExtra( SCORE, marks )
             startActivity( intent )
-
         }
     }
 }

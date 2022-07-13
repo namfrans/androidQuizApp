@@ -20,24 +20,21 @@ class ScoreActivity: AppCompatActivity() {
 
         totalGrade.text = score.toString()
 
-        if ( score >= 8 ){
+        if ( score >= 8 ) {
             complement.text = getString( R.string.excellent_complement )
         }
-        if ( score in 5..7 ){
+        if ( score in 5..7 ) {
             complement.text = getString( R.string.good_complement )
         }
-        if ( score < 5 ){
+        if ( score < 5 ) {
             complement.text = getString( R.string.satisfactory_complement )
         }
 
-        shareButton.setOnClickListener{
-
+        shareButton.setOnClickListener {
             val sendIntent = Intent().apply {
-
                 action = Intent.ACTION_SEND
                 putExtra( Intent.EXTRA_TEXT, "You scored: $score  /10" )
                 type = "text/plain"
-
             }
             try {
                 startActivity( sendIntent )
