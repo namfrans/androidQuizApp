@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             radioButtonFalse.setOnClickListener {
                 val toastIncorrect = Toast.makeText( this, "Incorrect", Toast.LENGTH_SHORT )
                 toastIncorrect.show()
-                radioButtonTrue.isChecked = false
+                radioButtonTrue.isEnabled = false
             }
         }
 
@@ -72,7 +72,6 @@ class MainActivity : AppCompatActivity() {
         //Set first question on launch
         questionSector.text = questions[ questionNumber ]
 
-        //
         if ( questionSector.text == questions[0] ) {
             correct()
         }
